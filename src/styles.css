@@ -213,4 +213,7 @@ body::-webkit-scrollbar-thumb {
   right: 15px;
   bottom: 20px;
 }
+.progressbar {
+  padding-top: 20px;
+}
 
