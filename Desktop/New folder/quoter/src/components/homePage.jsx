@@ -18,6 +18,7 @@ const HomePage = () => {
   const quote = useSelector((state) => state.quoter.quote);
   const tag = useSelector((state) => state.quoter.tag);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
 
   function handleClick() {
     setLoading(true);
@@ -55,6 +56,11 @@ const HomePage = () => {
         });
     }
   }
+
+  useEffect(() => {
+
+  }, [loading]);
+
 
   function AddBookmark() {
     dispatch(updatebookmarks(quote));
@@ -109,6 +115,7 @@ const HomePage = () => {
             <p className="buttontext">Next Quote</p>
           </div>
         </div>
+        {loading&&<ProgressBar/>}
       </div>
     </>
   );
